@@ -16,8 +16,7 @@
                 <a href="{{ route('home') }}" class="text-2xl font-bold text-red-600">PROMOFILM</a>
                 <div class="hidden md:flex space-x-6">
                     <a href="{{ route('promotions.index') }}" class="hover:text-red-500">Beranda</a>
-                    <a href="{{ route('promotions.latest') }}" class="hover:text-red-500">Promo Terbaru</a>
-                    <a href="{{ route('promotions.categories') }}" class="hover:text-red-500">Kategori</a>
+                        <a href="{{ route('kategori') }}" class="hover:text-red-500">Kategori</a>
                     <a href="{{ route('contact') }}" class="hover:text-red-500">Kontak</a>
                 </div>
             </div>
@@ -53,18 +52,17 @@
                     <h4 class="text-white font-semibold mb-4">Menu</h4>
                     <ul class="space-y-2">
                         <li><a href="{{ route('promotions.index') }}" class="text-gray-400 hover:text-red-500 text-sm">Beranda</a></li>
-                        <li><a href="{{ route('promotions.latest') }}" class="text-gray-400 hover:text-red-500 text-sm">Promo Terbaru</a></li>
-                        <li><a href="{{ route('promotions.categories') }}" class="text-gray-400 hover:text-red-500 text-sm">Kategori</a></li>
+                        <li><a href="{{ route('kategori') }}" class="text-gray-400 hover:text-red-500 text-sm">Kategori</a></li>
                         <li><a href="{{ route('contact') }}" class="text-gray-400 hover:text-red-500 text-sm">Kontak</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-white font-semibold mb-4">Kategori</h4>
                     <ul class="space-y-2">
-                        <li><a href="{{ route('promotions.category', 'bioskop') }}" class="text-gray-400 hover:text-red-500 text-sm">Bioskop</a></li>
-                        <li><a href="{{ route('promotions.category', 'streaming') }}" class="text-gray-400 hover:text-red-500 text-sm">Streaming</a></li>
-                        <li><a href="{{ route('promotions.category', 'voucher') }}" class="text-gray-400 hover:text-red-500 text-sm">Voucher</a></li>
-                        <li><a href="{{ route('promotions.category', 'giveaway') }}" class="text-gray-400 hover:text-red-500 text-sm">Giveaway</a></li>
+                        <li><a href="{{ route('kategori', 'bioskop') }}" class="text-gray-400 hover:text-red-500 text-sm">Bioskop</a></li>
+                        <li><a href="{{ route('kategori', 'streaming') }}" class="text-gray-400 hover:text-red-500 text-sm">Streaming</a></li>
+                        <li><a href="{{ route('kategori', 'voucher') }}" class="text-gray-400 hover:text-red-500 text-sm">Voucher</a></li>
+                        <li><a href="{{ route('kategori', 'giveaway') }}" class="text-gray-400 hover:text-red-500 text-sm">Giveaway</a></li>
                     </ul>
                 </div>
                 <div>

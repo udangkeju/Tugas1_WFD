@@ -21,26 +21,22 @@ class PromotionController extends Controller
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'title' => 'required|max:255',
+        $validated = $request->validate([
+            'title' => 'required',
             'description' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'category' => 'nullable|string' // Validasi category
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
     
-        // Set default category jika tidak diisi
-        $validatedData['category'] = $validatedData['category'] ?? 'bioskop';
+        // Simpan gambar ke storage
+        $imagePath = $request->file('image')->store('promotions', 'public');
     
-        // Upload gambar
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('promotions', 'public');
-            $validatedData['image'] = $imagePath;
-        }
+        Promotion::create([
+            'title' => $validated['title'],
+            'description' => $validated['description'],
+            'image' => $imagePath
+        ]);
     
-        Promotion::create($validatedData);
-    
-        return redirect()->route('promotions.index')
-                         ->with('success', 'Promosi berhasil ditambahkan!');
+        return redirect()->route('promotions.index');
     }
 
     public function show(Promotion $promotion)
